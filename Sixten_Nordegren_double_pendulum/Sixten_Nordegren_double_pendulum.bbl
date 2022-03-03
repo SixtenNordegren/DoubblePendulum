@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{3}%
+\begin{thebibliography}{6}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -58,12 +58,30 @@
 \bibitem [{Note2()}]{Note2}%
   \BibitemOpen
   \bibinfo {note} {From what I can tell, this is the standard way of treating
-  the constants to parts of the lagrangian that ends up disapering. Typically,
-  without any reference to doing so whatsoever. Which I personally find very
-  confusing. So I decided to include a small paragraph notifying the reader of
-  doing so.}\BibitemShut {Stop}%
+  the constants to parts of the Lagrangian that ends up disappearing.
+  Typically, without any reference to doing so whatsoever. Which I personally
+  find very confusing. So I decided to include a small paragraph notifying the
+  reader of doing so.}\BibitemShut {Stop}%
 \bibitem [{Note3()}]{Note3}%
   \BibitemOpen
   \bibinfo {note} {Definitions of $g_1$ and $g_2$ will be included in the
   appendix}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Newman}(2013)}]{newman_2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Newman}},\ }\href@noop {} {\emph {\bibinfo {title} {Computational
+  physics}}}\ (\bibinfo  {publisher} {CrCreateSpace},\ \bibinfo {year}
+  {2013})\BibitemShut {NoStop}%
+\bibitem [{Note4()}]{Note4}%
+  \BibitemOpen
+  \bibinfo {note} {Anyone interested in how this was done specifically or
+  seeing any of the code I wrote. You can find all of it on \protect \url
+  {https://github.com/SixtenNordegren/DoubblePendulum}.}\BibitemShut {Stop}%
+\bibitem [{Note5()}]{Note5}%
+  \BibitemOpen
+  \bibinfo {note} {The idea to write out the equations in different terms of
+  the functions of the respective 2'nd derivatives was something I found on a
+  blog, written by a guy named Diego Assencio. \protect \url
+  {https://diego.assencio.com/?index=1500c66ae7ab27bb0106467c68feebc6}}\BibitemShut
+  {NoStop}%
 \end{thebibliography}%

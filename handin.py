@@ -4,11 +4,11 @@ import os
 from numpy import sin, cos
 
 # Problem parameters
-g = 9.81
-l_1 = 1
-l_2 = l_1
-m_1 = 1
-m_2 = m_1
+g = 1
+l_1 = 2
+l_2 = 1
+m_1 = 3
+m_2 = 1
 
 # Numerical parameters
 a = 0.0
@@ -102,7 +102,7 @@ def plot(data):
     plt.show()
 
 
-def pendulum(r, P, N=1000, a=0, b=100):
+def pendulum(r, P, N=3000, a=0, b=100):
     res = []
 
     for i in np.linspace(a, b, num=N):
@@ -117,18 +117,26 @@ def pendulum(r, P, N=1000, a=0, b=100):
 
 
 def main():
-    P = np.array([1, 1, 1, 1])
-    r = np.array([0.5, 0.5, 0, 0])
-    epsilon = 0.5
+    name = "poincare_1"
+    P = np.array([l_1, l_2, m_1, m_2])
+    r = np.array([0.01, 0.01, 0, 0])
+    epsilon = 0.001
     res = np.array(pendulum(r, P))
 
     ress = np.array(pendulum(r, P + epsilon))
 
     res = np.array(res)
-    plt.scatter(res[:,0], res[:, 2])
-    plt.show()
+    fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+    fig.suptitle('Poincare maps ( \u03b5 = {0} )'.format(epsilon))
+    ax1.plot(res[:,3], res[:, 1], '.')
+    ax1.set(xlabel='\u03c9 2', ylabel="\u03c6 2")
+    ax1.set_title("Initial conditions = {0}".format(P))
+    ax2.set_title("")
+    ax2.plot(ress[:,3], res[:, 1],'.')
+    ax2.set_title("Initial conditions = {0} + \u03b5".format(P))
+    ax2.set(xlabel='\u03c9 2')
+    plt.savefig(str(name) + ".pdf", format="pdf")
 
-    plt.scatter(ress[:,0], res[:, 2])
     plt.show()
 
 if __name__ == "__main__":
